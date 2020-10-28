@@ -58,12 +58,12 @@ namespace TechJobsTests
         [TestMethod]
         public void TestToStringReturnsLabelsAndDataForAllFields()
         {
-            Assert.IsTrue(testJobString.Contains("ID:"));
-            Assert.IsTrue(testJobString.Contains("Name:"));
-            Assert.IsTrue(testJobString.Contains("Employer:"));
-            Assert.IsTrue(testJobString.Contains("Location:"));
-            Assert.IsTrue(testJobString.Contains("Position Type:"));
-            Assert.IsTrue(testJobString.Contains("Core Competency:"));
+            Assert.IsTrue(testJobString.Contains("ID: "));
+            Assert.IsTrue(testJobString.Contains("Name: "));
+            Assert.IsTrue(testJobString.Contains("Employer: "));
+            Assert.IsTrue(testJobString.Contains("Location: "));
+            Assert.IsTrue(testJobString.Contains("Position Type: "));
+            Assert.IsTrue(testJobString.Contains("Core Competency: "));
             Assert.IsTrue(testJobString.Contains(testJob.Id.ToString()));
             Assert.IsTrue(testJobString.Contains(testJob.Name));
             Assert.IsTrue(testJobString.Contains(testJob.EmployerName.Value));
@@ -80,6 +80,15 @@ namespace TechJobsTests
             string jobString = job.ToString();
             Assert.IsTrue(jobString.Contains("Data not available"));
         }
+
+        //[TestMethod]
+        //public void TestToStringToSeeIfJobExist()
+        //{
+        //    Job job = new Job();
+        //    string jobStr = job.ToString();
+
+        //    Assert.AreEqual(jobStr, Environment.NewLine + "OOPS! This job does not seem to exist." + Environment.NewLine);
+        //}
 
         
     }
