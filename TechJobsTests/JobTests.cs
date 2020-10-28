@@ -81,15 +81,15 @@ namespace TechJobsTests
             Assert.IsTrue(jobString.Contains("Data not available"));
         }
 
-        //[TestMethod]
-        //public void TestToStringToSeeIfJobExist()
-        //{
-        //    Job job = new Job();
-        //    string jobStr = job.ToString();
+        [TestMethod]
+        public void TestToStringToSeeIfJobExist()
+        {
+            Job job = new Job();
+            string jobStr = job.ToString();
 
-        //    Assert.AreEqual(jobStr, Environment.NewLine + "OOPS! This job does not seem to exist." + Environment.NewLine);
-        //}
+            Assert.AreEqual(jobStr, Environment.NewLine + "OOPS! This job does not seem to exist." + Environment.NewLine);
+        }
 
-        
+
     }
 }

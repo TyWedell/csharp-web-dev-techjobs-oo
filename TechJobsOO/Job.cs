@@ -6,48 +6,24 @@ using System.Text;
 
 namespace TechJobsOO
 {
-    public class Job
+    public class Job : ShellCo
     {
-        public int Id { get; }
-        private static int nextId = 1;
 
-        public string Name { get; set; }
-        public Employer EmployerName { get; set; }
-        public Location EmployerLocation { get; set; }
-        public PositionType JobType { get; set; }
-        public CoreCompetency JobCoreCompetency { get; set; }
-
-        // TODO: Add the two necessary constructors.
-
-        public Job()
+        public Job() : base()
         {
-            Id = nextId;
-            nextId++;
+            Name = "";
+            EmployerName = new Employer("");
+            EmployerLocation = new Location("");
+            JobType = new PositionType("");
+            JobCoreCompetency = new CoreCompetency("");
         }
 
-        public Job (string name, Employer employer, Location location, PositionType jobType, CoreCompetency coreCompetency) : this()
-        {
-            Name = name;
-            EmployerName = employer;
-            EmployerLocation = location;
-            JobType = jobType;
-            JobCoreCompetency = coreCompetency;
-        }
+        public Job (string name, Employer employer, Location location, PositionType jobType, CoreCompetency coreCompetency) : 
+            base(name, employer, location, jobType, coreCompetency)
+        { }
+    
 
-        // TODO: Generate Equals() and GetHashCode() methods.
-
-        public override bool Equals(object obj)
-        {
-            return obj is Job job &&
-                   Id == job.Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
+        //public override string ToString()
         //{
         //    string str = Environment.NewLine;
         //    string empty = "Data not available";
@@ -135,48 +111,6 @@ namespace TechJobsOO
         //    }
 
         //        return str;
-
-        //}
-        {
-            
-            StringBuilder str = new StringBuilder(Environment.NewLine);
-            int emptyFields = 1;
-            Dictionary<string, string> jobStrings = new Dictionary<string, string>()
-            {
-                {"ID: ", Id.ToString() },
-                {"Name: ", Name },
-                {"Employer: ", EmployerName.Value },
-                {"Location: ", EmployerLocation.Value },
-                {"Position Type: ", JobType.Value },
-                {"Core Competency: ", JobCoreCompetency.Value }
-            };
-
-            List<string> keys = new List<string>(jobStrings.Keys);
-
-            foreach ( string key in keys)
-            {
-                if(jobStrings[key] == "")
-                {
-                    jobStrings[key] = "Data not available";
-                    emptyFields++;
-                }
-            }
-
-            if(emptyFields == jobStrings.Count)
-            {
-                return Environment.NewLine + "OOPS! This job does not seem to exist." + Environment.NewLine;
-            }
-
-            foreach(KeyValuePair<string, string> field in jobStrings)
-            {
-                str.AppendLine(field.Key + field.Value);
-            }
-
-
-
-
-            return str.ToString();
-        }
 
     }
 }
