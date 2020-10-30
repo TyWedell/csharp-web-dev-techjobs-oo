@@ -20,7 +20,7 @@ namespace TechJobsOO
             Id = nextId;
             nextId++;
         }
-
+     
         public ShellCo(string name, Employer employer, Location location, PositionType jobType, CoreCompetency coreCompetency) : this()
         {
             Name = name;

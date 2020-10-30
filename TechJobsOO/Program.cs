@@ -12,6 +12,7 @@ namespace TechJobsOO
             Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
             Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
             Job job4 = new Job();
+            Job job5 = new Job("Laundry Operator", new Employer(""), new Location(""), new PositionType("Operator"), new CoreCompetency("Discretion"));
 
             List<Job> jobs = new List<Job>();
 
@@ -19,6 +20,7 @@ namespace TechJobsOO
             jobs.Add(job2);
             jobs.Add(job3);
             jobs.Add(job4);
+            jobs.Add(job5);
 
             foreach (Job job in jobs)
             {
